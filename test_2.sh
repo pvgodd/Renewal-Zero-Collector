@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##############################################################################################################
-#                                        Linux Incident Response Script Renewal-Zero-Collector                             #
+#                                        Linux Incident Response Script Renewal-Zero-Collector               #
 #                                        Cyberone SOC mss_analysis@cyberone.kr                               #
 ##############################################################################################################
 
