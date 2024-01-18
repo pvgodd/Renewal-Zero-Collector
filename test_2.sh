@@ -8,6 +8,7 @@
 
 
 output_dir="/tmp/c1_Zero_Collector"
+<<<<<<< HEAD
 mkdir -p "$output_dir/log_file"
 mkdir -p "$output_dir/cron_file"
 mkdir -p "$output_dir/System"
@@ -15,6 +16,11 @@ mkdir -p "$output_dir/IP Tables && Network"
 mkdir -p "$output_dir/Logs"
 mkdir -p "$output_dir/Users"
 mkdir -p "$output_dir/Process"
+=======
+mkdir -p "$output_dir/hash" 
+mkdir -p "$output_dir/log_file"
+mkdir -p "$output_dir/cron_file"
+>>>>>>> e646a12d82cda85fcef160aa2751575e4a7b412b
 
 logfile="$output_dir/forensics_log.txt"
 
@@ -22,8 +28,12 @@ logfile="$output_dir/forensics_log.txt"
 write_output() {
     command=$1
     filename=$2
+<<<<<<< HEAD
     art_dir=$3
     if $command >> "$output_dir/$art_dir/$filename" 2>&1; then
+=======
+    if $command >> "$output_dir/$filename" 2>&1; then
+>>>>>>> e646a12d82cda85fcef160aa2751575e4a7b412b
         echo "Successfully executed: $command" >> "$logfile"
     else
         echo "Failed to execute: $command" >> "$logfile"
@@ -119,9 +129,15 @@ wirte_output "file /bin/* /sbin/* /usr/bin/* /usr/sbin/* /usr/local/bin/* /usr/l
 write_output "file /lib/* /usr/lib/* /lib64/* /usr/lib64/* /usr/local/lib/* /usr/local/lib64/* | grep 'execu' " "Check_Execute.txt" "System"
 
 ## Information
+<<<<<<< HEAD
 write_output "ECHO '[**lsof -n**]'" "losf.txt" "System"
 write_output "lsof -n" "losf.txt" "System"
 write_output "ECHO '[**lsof -i**]'" "losf.txt" "System"
+=======
+write_output "ECHO '[**lsof -n**]'" "losf.txt"
+write_output "lsof -n" "losf.txt" "System"
+write_output "ECHO '[**lsof -i**]'" "losf.txt"
+>>>>>>> e646a12d82cda85fcef160aa2751575e4a7b412b
 write_output "lsof -i" "losf.txt" "System"
 
 # ## Storing Inetd.Conf File
@@ -195,6 +211,7 @@ done
 ### Logs
 
 ## copying /var/log file
+<<<<<<< HEAD
 write_output "cp /var/log/secure* " "$output_dir" "Logs"
 write_output "cp /var/log/messages* " "$output_dir" "Logs"
 write_output "cp /var/log/yum* " "$output_dir" "Logs"
@@ -206,6 +223,19 @@ write_output "cp /var/log/xferlog* " "$output_dir/log_file/" "Logs"
 write_output "find / -xdev -name pam_unix.so -exec cp {}" "$output_dir/log_file/" "Logs"
 
 # Copying /var/spool/cron
+=======
+write_output "cp /var/log/secure* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/messages* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/yum* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/dmesg* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/cron* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/auth.log* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/syslog* " "$output_dir/log_file/" "Logs"
+write_output "cp /var/log/xferlog* " "$output_dir/log_file/" "Logs"
+write_output "find / -xdev -name pam_unix.so -exec cp {}" "$output_dir/log_file/" "Logs"
+
+## Copying /var/spool/cron
+>>>>>>> e646a12d82cda85fcef160aa2751575e4a7b412b
 write_output "cp /var/spool/cron/*" "$logfile/cron_file/" "Logs"
 
 # ## Storing Failed Logins
