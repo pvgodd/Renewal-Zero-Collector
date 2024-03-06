@@ -7,7 +7,7 @@
 - 분류 별로 폴더 지정
 - lib 파일 추가
 
-내일 할 것
+2024.01.10 ~ //
 - centos  6, 5 설치 후 rpm 테스트
 - 리눅스 버전 확인 후 rpm 수집 가능하게 소스코드 수정
 - write_output "lsattr /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin" "binary_file.txt" -> bin 폴더 없어서 에러남
