@@ -13,3 +13,8 @@
 - write_output "lsattr /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin" "binary_file.txt" -> bin 폴더 없어서 에러남
 - lsof -n이랑 -i 옵션 한 파일에 저장 및 구분할 수 있게 수정
 - write_output copy 명령어 되는지 확인
+
+2024.03.06
+- file_stamp 파일 압축 관련
+- 주석처리 해 놓은 모듈들 대체 가능한지
+- 커널 관련 모듈 modprobe 대체 가능한지
