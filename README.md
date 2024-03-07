@@ -24,7 +24,7 @@
 - usb mount command update ✔️
 - lsof command update ✔️
 - result file command 하이라이트
-- result file에 total 계산 추가
-  [+] [-] 추가 완료 ✔️
+- result file에 [+] [-] 추가 완료 ✔️
+- result file에 총합 추가
 - 퍼센트 바 추가
 - 
