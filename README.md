@@ -25,5 +25,6 @@
 - lsof command update ✔️
 - result file command 하이라이트
 - result file에 total 계산 추가
+  [+] [-] 추가 완료 ✔️
 - 퍼센트 바 추가
 - 
