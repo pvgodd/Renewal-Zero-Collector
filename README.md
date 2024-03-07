@@ -18,3 +18,12 @@
 - file_stamp 파일 압축 관련
 - 주석처리 해 놓은 모듈들 대체 가능한지
 - 커널 관련 모듈 modprobe 대체 가능한지
+
+2024.03.07
+- LISA update ✔️
+- usb mount command update ✔️
+- lsof command update ✔️
+- result file command 하이라이트
+- result file에 total 계산 추가
+- 퍼센트 바 추가
+- 
