@@ -33,3 +33,4 @@
 
 2024.03.12
 - result file command 하이라이트 -> 결과 파일에 적용 불가능
+- result file 아티팩트 성공/실패 카운트 수 추가 완료
