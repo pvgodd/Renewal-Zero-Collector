@@ -36,3 +36,16 @@
 - result file 아티팩트 성공/실패 카운트 수 추가 완료
 - 아티팩트 수집 실패 따로 텍스트 파일 저장 완료
 
+2024.04.05
+** 정리하면서 산출물 제작 **
+
+1. https://fareedfauzi.github.io/2024/03/29/Linux-Forensics-cheatsheet.html#general-information
+	명령어 공부 -> 각자 리스트 정리
+
+2. 각자 정리한 리스트 비교
+
+3. LISA Tool과 선정한 리스트 비교
+
+4. Tool 업데이트 
+
+5. 피해 서버 구축 후 Tool 테스트
