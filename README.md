@@ -37,7 +37,7 @@
 - 아티팩트 수집 실패 따로 텍스트 파일 저장 완료
 
 2024.04.05
-* 정리하면서 산출물 제작 *
+정리하면서 산출물 제작
 
 1. https://fareedfauzi.github.io/2024/03/29/Linux-Forensics-cheatsheet.html#general-information 
 명령어 공부 -> 각자 리스트 정리
