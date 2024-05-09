@@ -1,4 +1,4 @@
-###일반정보
+### 일반정보
 
 - 배포 버전 표시
 cat /etc/*-release
@@ -6,7 +6,7 @@ cat /etc/*-release
 - OS 설치 날짜. 날짜 확인
 ls -ld /var/log/installer
 
-###로그온 
+### 로그온 
 
 - 특정 키워드로 auth.log에서 로그인 활동 검색하기
 grep -v cron /var/log/auth.log* | grep -v sudo | grep -i user
@@ -14,7 +14,7 @@ grep -v cron /var/log/auth.log* | grep -v sudo | grep -i Accepted
 grep -v cron /var/log/auth.log* | grep -v sudo | grep -i failed
 grep -v cron /var/log/auth.log* | grep -v sudo | grep i "login:session"
 
-###히스토리
+### 히스토리
 
 - 사용자의 홈 디렉터리에서 이름에 "history"가 포함된 모든 파일을 확인합니다.
 cat /home/$USER/.*_history
@@ -57,7 +57,7 @@ grep -v cron /var/log/auth.log* | grep -i -e "command=" -e "su:" -e "groupadd" -
 
 
 
-###특정 문자열 필터링 
+### 특정 문자열 필터링 
 
 - 지난 5일 이내에 수정된 파일을 검색하고 추가 검사를 위해 확인하고 필요한 경우 5를 변경합니다.
 find / -type f -mtime -5 | less
@@ -87,7 +87,7 @@ find / -user root -perm -04000 -print
 ls /dev
 
 
-###소프트웨어 패키지 
+### 소프트웨어 패키지 
 
 - 소프트웨어 변경 사항을 추적하기 위해 APT 히스토리 로그에서 패키지 설치에 사용된 명령을 검사합니다.
 cat /var/log/apt/history.log | grep "명령줄"
@@ -107,7 +107,7 @@ ls /usr/sbin /usr/bin /bin /sbin
 - 다운로드한 패키지를 조사하기 위해 APT 패키지 캐시 디렉터리에 파일을 나열합니다.
 ls /var/cache/apt/archives
 
-###계정
+### 계정
 
 - 잠재적인 권한 상승에 대한 sudo 구성 검토
 cat /etc/sudoers
@@ -124,12 +124,12 @@ cat /home/$USER/.ssh/known_hosts
 - 사용자 활동에 대해 최근에 사용한 파일 검토
 cat /home/$USER/.recently-used.xbel
 
-###웹쉘 
+### 웹쉘 
 
 - var/www/html 디렉토리에서 PHP 파일을 검색하고 수정 타임스탬프를 인쇄합니다.
 find /var/www/html -type f -name "*.php" -printf "%T@ %f\n" | sort -n | awk '{print strftime("%Y-%m-%d %H:%M:%S", $1), $2}'
 
-###크론
+### 크론
 
 - View the configuration of the cron service managed by systemd
 cat /lib/systemd/system/cron.service
@@ -140,7 +140,7 @@ tail -f /etc/cron.*/*
 - at 명령으로 예약된 at 작업이 포함된 atjobs 파일의 내용을 봅니다.
 cat /var/spool/cron/atjobs
 
-###ssh 데몬
+### ssh 데몬
 
 - systemd에서 관리하는 SSH 서비스 구성 보기
 cat /lib/systemd/system/ssh.service
@@ -154,7 +154,7 @@ ls ~/.ssh/rc
 - 시스템 전체 SSH 리소스 파일을 /etc/ssh 디렉터리에 나열합니다.
 ls /etc/ssh/sshrc
 
-###감염된 바이너리
+### 감염된 바이너리
 
 - 지정한 디렉터리에서 지난 10일 이내에 수정된 바이너리를 찾습니다. (날짜 사고 시간으로 변경)
 find /lib /usr/bin /usr/sbin -type f -newermt "$(date -d '10 days ago' +'%Y-%m-%d')"
@@ -162,7 +162,7 @@ find /lib /usr/bin /usr/sbin -type f -newermt "$(date -d '10 days ago' +'%Y-%m-%
 - 파이썬 3 관련 라이브러리 및 모듈을 /usr/lib 디렉터리에 나열합니다.
 ls /usr/lib/python3*
 
-###팸 
+### 팸 
 
 - Display contents of the PAM configuration file
 cat /etc/pam.conf
