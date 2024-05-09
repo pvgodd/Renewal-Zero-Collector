@@ -1,0 +1,58 @@
+C1_LISA_v2 Folder Update
+
+System 폴더 없애기
+
+rc 관련 폴더 -> 보류
+
+### File
+파일 관련 아티팩트
+find
+elf 파일 관련 -> 보류 명령어 확
+파일 속성 확인
+디버깅 정보 필터링
+execu 파일 수집
+lsof -n
+## Webshell
+감염된 바이너리
+
+### Users
+passwd
+shadow
+group
+## history
+
+## Login
+
+## Logout
+
+### Logs
+
+### Cron
+
+### IP . . .
+hosts
+lsof -i
+
+
+### Process
+lsmod
+df -k
+
+### Disk
+fdisk
+mount
+usbmount
+
+
+### Info
+hostname
+배포버전 표시
+OS 설치 날짜
+시스템 ID(uname -a)
+last -a -i
+who
+uptime
+
+### SSH
+
+### PAM
