@@ -1,0 +1,164 @@
+Linux IR Script Artifact
+
+[ 2024-04-12 ]
+
+# timestamp
+
+# uname -a
+
+# hostname
+
+# date
+
+# last
+
+# who
+
+# /etc/passwd
+
+# /etc/shadow
+
+# /etc/group
+
+# /etc/hosts.allow
+# /etc/host.deny
+
+# /etc/rc.d/rc.local
+# /etc/init.d/rc.local
+# /etc/rc.d/init.d/rc.local
+# /etc/init.d/boot.local
+
+# df -k
+
+# find /dev -type f -exec file {} \;
+# find /usr/share -name "*.gz" | xargs file | grep ELF
+
+# mount
+# USB mount
+
+# ls -alR /tmp /dev/shm /var/tm
+
+# lsof
+
+# ifconfig -a
+
+# netstat -ntulpa
+# netstat -rn
+
+# w
+
+# iptables -L
+
+# ps -auxwf
+# ps -ef
+                                                                                                                                                                                         
+# chkproc
+
+# find /proc -name maps -exec cat {} \; | grep deleted
+
+# histroy
+root / home
+$user_home/.bash_history
+$user_home/.zsh_history
+cat $user_home/.local/share/recently-used.xbel
+
+# logs
+secure / messages / yum / dmesg / cron / auth / syslog / xferlog
+
+# crontab
+/var/spool/cron/crontabs/*
+
+
+[ 2024-04-22 ]
+수집 스크립트 문제점
+	로그가 압축되어 있는 경우에는 읽어들이지 못하고 secure.gz.txt 이런 형태로 가져와서 파일이 깨진다 -> 파일을 가져오는 명령어를 수정해야 할듯
+	wget 명령어를 사용하는 게 맞나 ?
+	
+
+[ 2024-04-23 ]
+로그가 압축되어 있는 경우에는 읽어들이지 못하고 secure.gz.txt 이런 형태로 가져와서 파일이 깨진다 -> 로그 파일 저장할 때 .txt 없애니까 해결됨
+
+추가 수집할 로그
+	httpd, sa
+		폴더를 수집해야 함
+
+	wtmp, btmp -> 추가함
+
+	pstree -> 추가함
+
+	hosts -> 추가함
+
+	history -> 사용자 별로 따로 수집
+	-> ftphistory 같은 로그들도 수집 ?
+
+	/usr/sbin /usr/bin /bin /sbin -> 수집해오는데 grep 빼고 수집하는 걸로 수정하기
+
+	sudoers sudoers.d
+
+	cat /etc/crontab -> 추가함
+
+	/lib/systemd/system/cron.service -> 보류 
+
+	ls /etc/systemd/system/ -> 보류 
+
+	ls /lib/systemd/system/ -> 보류 
+
+	more -f /etc/init.d/*
+
+	ls /lib/systemd/user/* -> 보류 
+
+	ls /etc/systemd/user/* -> 보류 
+
+	cat /lib/systemd/system/ssh.service -> 보류 
+
+	cat /etc/ssh/sshd_config
+
+	ls ~/.ssh/rc
+
+	ls /etc/ssh/sshrc
+
+	cat /etc/bash.bashrc
+
+	cat /home/$USER/.bashrc
+
+	cat /home/$USER/.bash_profile
+
+	cat /etc/profile
+
+	cat /etc/profile.d/*
+
+	cat /home/$USER/.profile
+
+	cat /home/$USER/.bash_login
+
+	cat /home/$USER/.bash_logout
+
+	cat /etc/.bash_logout
+
+	cat /etc/rc*
+		가져올 필요가 있을까,,?
+
+	cat /etc/update-motd.d/*
+
+	uptime -> 추가함
+
+	free -> 추가함
+
+	df -> 추가함
+
+	# 지정한 디렉토리에서 일반적인 파일만 검색하고 자세한 정보 출력
+	find /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec ls -la {} \;
+
+	ps aux | grep -i root
+
+	netstat -antup -> 추가함
+
+	sha256sum /bin/* /sbin/* /usr/bin/* /usr/sbin/* /lib/* /lib64/* /etc/* | sort > current_checksums.txt
+
+	lsmod
+
+	lsblk
+
+	fdisk -l
+
+	사용자 별 수집
