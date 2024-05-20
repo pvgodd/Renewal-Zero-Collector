@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# V2.2
 ##############################################################################################################
 #                                        Linux Incident Response Script Renewal-Zero-Collector               #
 #                                        Cyberone SOC mss_analysis@cyberone.kr                               #
@@ -143,14 +143,14 @@ for user_home in /home/* /root; do
     if [ -f "$user_home/.bash_history" ]; then
         users_write_output "cat $user_home/.bash_history" "bash_history_$username" "History"
     else
-        echo "no .bash_history for $username" >> "$output_dir/History/bash_history_$username"
+        echo "no .bash_history for $username" >> "$users_dir/History/bash_history_$username"
         users_write_output "cat $user_home/.bash_history" "bash_history_$username" "History"
     fi
 
     if [ -f "$user_home/.zsh_history" ]; then
         users_write_output "cat $user_home/.zsh_history" "zsh_history_$username" "History"
     else
-        echo "no .zsh_history for $username" >> "$output_dir/History/zsh_history_$username"
+        echo "no .zsh_history for $username" >> "$users_dir/History/zsh_history_$username"
         users_write_output "cat $user_home/.zsh_history" "zsh_history_$username" "History"
     fi
 
@@ -164,14 +164,14 @@ for user_home in /home/* /root; do
     if [ -f "$user_home/.ftp_history" ]; then
         users_write_output "cat $user_home/.ftp_history" "ftp_history_$username" "History"
     else
-        echo "no .ftp_history for $username" >> "$output_dir/History/bash_history_$username"
+        echo "no .ftp_history for $username" >> "$users_dir/History/bash_history_$username"
         users_write_output "cat $user_home/.ftp_history" "ftp_history_$username" "History"
     fi
 
     if [ -f "$user_home/.sftp_history" ]; then
         users_write_output "cat $user_home/.sftp_history" "sftp_history_$username" "History"
     else
-        echo "no .sftp_history for $username" >> "$output_dir/History/zsh_history_$username"
+        echo "no .sftp_history for $username" >> "$users_dir/History/zsh_history_$username"
         users_write_output "cat $user_home/.sftp_history" "sftp_history_$username" "History"
     fi
 
@@ -184,21 +184,21 @@ for user_home in /home/* /root; do
     if [ -f "$user_home/.viminfo" ]; then
         users_write_output "cat $user_home/.viminfo" "viminfo_$username" "History"
     else
-        echo "no .viminfo for $username" >> "$output_dir/History/bash_history_$username"
+        echo "no .viminfo for $username" >> "$users_dir/History/bash_history_$username"
         users_write_output "cat $user_home/.viminfo" "viminfo_$username" "History"
     fi
 
     if [ -f "$user_home/.lesshst" ]; then
         users_write_output "cat $user_home/.lesshst" "lesshst_$username" "History"
     else
-        echo "no .lesshst for $username" >> "$output_dir/History/zsh_history_$username"
+        echo "no .lesshst for $username" >> "$users_dir/History/zsh_history_$username"
         users_write_output "cat $user_home/.lesshst" "lesshst_$username" "History"
     fi
 
     if [ -f "$user_home/.mysql_history" ]; then
         users_write_output "cat $user_home/.mysql_history" "mysql_history_$username" "History"
     else
-        echo "no .mysql_history for $username" >> "$output_dir/History/mysql_history_$username"
+        echo "no .mysql_history for $username" >> "$users_dir/History/mysql_history_$username"
         users_write_output "cat $user_home/.mysql_history" "mysql_history_$username" "History"
     fi
 
@@ -211,18 +211,16 @@ for user_home in /home/* /root; do
     if [ -f "$user_home/.mozilla" ]; then
         users_write_output "cat $user_home/.mozilla" "mozilla_$username" "History"
     else
-        echo "no .mozilla for $username" >> "$output_dir/History/mozilla_$username"
+        echo "no .mozilla for $username" >> "$users_dir/History/mozilla_$username"
         users_write_output "cat $user_home/.mozilla" "mozilla_$username" "History"
     fi
 
     if [ -f "$user_home/.config/google-chrome" ]; then
         users_write_output "cat $user_home/.config/google-chrome" "chrome_$username" "History"
     else
-        echo "no .config/google-chrome for $username" >> "$output_dir/History/chrome_$username"
+        echo "no .config/google-chrome for $username" >> "$users_dir/History/chrome_$username"
         users_write_output "cat $user_home/.config/google-chrome" "chrome_$username" "History"
     fi
-
-    if [ -f "$user_home/.mysql_history" ]; then
 
 done
 
@@ -233,14 +231,14 @@ for user_home in /home/* /root; do
     if [ -f "$user_home/.gitconfig" ]; then
         users_write_output "cat $user_home/.gitconfig" "gitconfig_$username" "History"
     else
-        echo "no .gitconfig for $username" >> "$output_dir/History/gitconfig_$username"
+        echo "no .gitconfig for $username" >> "$users_dir/History/gitconfig_$username"
         users_write_output "cat $user_home/.gitconfig" "gitconfig_$username" "History"
     fi
 
     if [ -f "$user_home/.git/logs" ]; then
         users_write_output "cat $user_home/.git/logs" "git_history_$username" "History"
     else
-        echo "no .git_logs for $username" >> "$output_dir/History/git_history_$username"
+        echo "no .git_logs for $username" >> "$users_dir/History/git_history_$username"
         users_write_output "cat $user_home/.git/logs" "git_history_$username" "History"
     fi
 
@@ -255,14 +253,14 @@ for user_login in /home/* ; do
     if [ -f "$user_login/.bashrc" ]; then
         users_write_output "cat $user_login/.bashrc" "bashrc_$username" "Login"
     else
-        echo "no .bashrc for $username" >> "$output_dir/Login/bashrc_$username"
+        echo "no .bashrc for $username" >> "$users_dir/Login/bashrc_$username"
         users_write_output "cat $user_login/.bashrc" "bashrc_$username" "Login"
     fi
 
     if [ -f "$user_login/.bash_profile" ]; then
         users_write_output "cat $user_login/.bash_profile" "bash_profile_$username" "Login"
     else
-        echo "no .bash_profile for $username" >> "$output_dir/Login/bash_profile_$username"
+        echo "no .bash_profile for $username" >> "$users_dir/Login/bash_profile_$username"
         users_write_output "cat $usera_login/.bash_profile" "bash_profile_$username" "Login"
     fi
 done
@@ -276,7 +274,7 @@ for user_logout in /home/* ; do
     if [ -f "$user_logout/.bash_logout" ]; then
         users_write_output "cat $user_logout/.bash_logout" "logout_$username" "Logout"
     else
-        echo "no .bash_logout for $username" >> "$output_dir/Logout/logout_$username"
+        echo "no .bash_logout for $username" >> "$users_dir/Logout/logout_$username"
         users_write_output "cat $user_logout/.bash_logout" "logout_$username" "Logout"
     fi
 done
@@ -323,7 +321,7 @@ logs=("secure*" "messages*" "yum*" "dmesg*" "cron*" "auth*" "syslog*" "xferlog*"
 
 for log_pattern in "${logs[@]}"; do
     for log in /var/log/$log_pattern; do
-        logname=4(basename "$log")
+        logname=$(basename "$log")
         if [ -f "$log" ]; then
             write_output "cat $log" "$logname" "Logs"
         else
